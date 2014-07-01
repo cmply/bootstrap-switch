@@ -1,17 +1,42 @@
 //
 // Variables
 // --------------------------------------------------
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700,600,400,300');
 
 //== Colors
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@gray-darker:            lighten(#000, 13.5%); // #222
-@gray-dark:              lighten(#000, 20%);   // #333
-@gray:                   lighten(#000, 33.5%); // #555
-@gray-light:             lighten(#000, 60%);   // #999
-@gray-lighter:           lighten(#000, 93.5%); // #eee
+@gray-darker:            #222; // #222
+@gray-dark:              #333;   // #333
+@gray:                   #555;
+@gray-light:             #999;   // #999
+@gray-lighter:           #eee; // #eee
+@gray-lighter-dark:      #d9d9d9;
+
+@black:                 #000;
+@white:                 #fff;
+
+// Accent colors
+// -------------------------
+@blue:                  #42abe8;
+@blueLighter:           #a1d5f4;
+@blueDark:              #1175bb;
+@blueLight:             #88badd;
+@green:                 #46a546;
+@greenDark:             #409740;
+@greenLight:            #93d58f;
+@greenLighter:          #b0d5af;
+@red:                   #e73027;
+@redDark:               #d02a22;
+@redLight:              #f39893;
+@redLighter:            #F7CECB;
+@yellow:                #ffc40d;
+@orange:                #f79826;
+@orangeDark:            #f0830e;
+@orangeLight:           #fbcc93;
+@pink:                  #d82398;
+@purple:                #911e8f;
 
 @brand-primary:         #428bca;
 @brand-success:         #5cb85c;
@@ -25,12 +50,12 @@
 // ## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
+@body-bg:               @white;
 //** Global text color on `<body>`.
 @text-color:            @gray-dark;
 
 //** Global textual link color.
-@link-color:            @brand-primary;
+@link-color:            #08c;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
 
@@ -38,11 +63,15 @@
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
-
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:        "Open Sans", Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-monospace:        Menlo, Monaco, Consolas, "Courier New", monospace;
+
+@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    normal;    // instead of browser default, bold
+@headingsColor:         inherit; // empty to use BS default, @textColor
+
 @font-family-base:        @font-family-sans-serif;
 
 @font-size-base:          14px;
@@ -72,9 +101,9 @@
 //
 //## Specify custom locations of the include Glyphicons icon font. Useful for those including Bootstrap via Bower.
 
-@icon-font-path:          "../fonts/";
-@icon-font-name:          "glyphicons-halflings-regular";
-@icon-font-svg-id:        "glyphicons_halflingsregular";
+//@icon-font-path:          "../fonts/";
+//@icon-font-name:          "glyphicons-halflings-regular";
+//@icon-font-svg-id:        "glyphicons_halflingsregular";
 
 //== Components
 //
@@ -95,12 +124,12 @@
 @line-height-large:         1.33;
 @line-height-small:         1.5;
 
-@border-radius-base:        4px;
-@border-radius-large:       6px;
-@border-radius-small:       3px;
+@border-radius-base:        0;
+@border-radius-large:       0;
+@border-radius-small:       0;
 
 //** Global color for active items (e.g., navs or dropdowns).
-@component-active-color:    #fff;
+@component-active-color:    @white;
 //** Global background color for active items (e.g., navs or dropdowns).
 @component-active-bg:       @brand-primary;
 
@@ -137,29 +166,29 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #333;
-@btn-default-bg:                 #fff;
-@btn-default-border:             #ccc;
+@btn-default-color:              @gray-dark;
+@btn-default-bg:                 @gray-lighter-dark; //@gray-lighter;
+@btn-default-border:             @gray-lighter-dark; //@gray-lighter; //#ccc;
 
-@btn-primary-color:              #fff;
-@btn-primary-bg:                 @brand-primary;
-@btn-primary-border:             darken(@btn-primary-bg, 5%);
+@btn-primary-color:              @white;
+@btn-primary-bg:                 @orange;
+@btn-primary-border:             @orange; //darken(@btn-primary-bg, 5%);
 
-@btn-success-color:              #fff;
-@btn-success-bg:                 @brand-success;
-@btn-success-border:             darken(@btn-success-bg, 5%);
+@btn-success-color:              @white;
+@btn-success-bg:                 @green;
+@btn-success-border:             @green; //darken(@btn-success-bg, 5%);
 
-@btn-info-color:                 #fff;
-@btn-info-bg:                    @brand-info;
-@btn-info-border:                darken(@btn-info-bg, 5%);
+@btn-info-color:                 @white;
+@btn-info-bg:                    @blue;
+@btn-info-border:                @blue; //darken(@btn-info-bg, 5%);
 
-@btn-warning-color:              #fff;
-@btn-warning-bg:                 @brand-warning;
-@btn-warning-border:             darken(@btn-warning-bg, 5%);
+@btn-warning-color:              @white;
+@btn-warning-bg:                 lighten(@orange, 15%);
+@btn-warning-border:             lighten(@orange, 15%); //darken(@btn-warning-bg, 5%);
 
-@btn-danger-color:               #fff;
-@btn-danger-bg:                  @brand-danger;
-@btn-danger-border:              darken(@btn-danger-bg, 5%);
+@btn-danger-color:               @white;
+@btn-danger-bg:                  @red;
+@btn-danger-border:              @red; //darken(@btn-danger-bg, 5%);
 
 @btn-link-disabled-color:        @gray-light;
 
@@ -169,7 +198,7 @@
 //##
 
 //** `<input>` background color
-@input-bg:                       #fff;
+@input-bg:                       @white;
 //** `<input disabled>` background color
 @input-bg-disabled:              @gray-lighter;
 
@@ -206,7 +235,7 @@
 //## Dropdown menu container and contents.
 
 //** Background for the dropdown menu.
-@dropdown-bg:                    #fff;
+@dropdown-bg:                    @white;
 //** Dropdown menu `border-color`.
 @dropdown-border:                rgba(0,0,0,.15);
 //** Dropdown menu `border-color` **for IE8**.
@@ -365,7 +394,7 @@
 
 // Inverted navbar links
 @navbar-inverse-link-color:                 @gray-light;
-@navbar-inverse-link-hover-color:           #fff;
+@navbar-inverse-link-hover-color:           @white;
 @navbar-inverse-link-hover-bg:              transparent;
 @navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
 @navbar-inverse-link-active-bg:             darken(@navbar-inverse-bg, 10%);
@@ -374,12 +403,12 @@
 
 // Inverted navbar brand label
 @navbar-inverse-brand-color:                @navbar-inverse-link-color;
-@navbar-inverse-brand-hover-color:          #fff;
+@navbar-inverse-brand-hover-color:          @white;
 @navbar-inverse-brand-hover-bg:             transparent;
 
 // Inverted navbar toggle
 @navbar-inverse-toggle-hover-bg:            #333;
-@navbar-inverse-toggle-icon-bar-bg:         #fff;
+@navbar-inverse-toggle-icon-bar-bg:         @white;
 @navbar-inverse-toggle-border-color:        #333;
 
 
@@ -394,7 +423,7 @@
 @nav-disabled-link-color:                   @gray-light;
 @nav-disabled-link-hover-color:             @gray-light;
 
-@nav-open-link-hover-color:                 #fff;
+@nav-open-link-hover-color:                 @white;
 
 //== Tabs
 @nav-tabs-border-color:                     #ddd;
@@ -419,19 +448,19 @@
 //##
 
 @pagination-color:                     @link-color;
-@pagination-bg:                        #fff;
+@pagination-bg:                        @white;
 @pagination-border:                    #ddd;
 
 @pagination-hover-color:               @link-hover-color;
 @pagination-hover-bg:                  @gray-lighter;
 @pagination-hover-border:              #ddd;
 
-@pagination-active-color:              #fff;
+@pagination-active-color:              @white;
 @pagination-active-bg:                 @brand-primary;
 @pagination-active-border:             @brand-primary;
 
 @pagination-disabled-color:            @gray-light;
-@pagination-disabled-bg:               #fff;
+@pagination-disabled-bg:               @white;
 @pagination-disabled-border:           #ddd;
 
 
@@ -490,7 +519,7 @@
 //** Tooltip max width
 @tooltip-max-width:           200px;
 //** Tooltip text color
-@tooltip-color:               #fff;
+@tooltip-color:               @white;
 //** Tooltip background color
 @tooltip-bg:                  #000;
 @tooltip-opacity:             .9;
@@ -506,7 +535,7 @@
 //##
 
 //** Popover body background color
-@popover-bg:                          #fff;
+@popover-bg:                          @white;
 //** Popover maximum width
 @popover-max-width:                   276px;
 //** Popover border color
@@ -520,7 +549,7 @@
 //** Popover arrow width
 @popover-arrow-width:                 10px;
 //** Popover arrow color
-@popover-arrow-color:                 #fff;
+@popover-arrow-color:                 @white;
 
 //** Popover outer arrow width
 @popover-arrow-outer-width:           (@popover-arrow-width + 1);
@@ -548,9 +577,9 @@
 @label-danger-bg:             @brand-danger;
 
 //** Default label text color
-@label-color:                 #fff;
+@label-color:                 @white;
 //** Default text color of a linked label
-@label-link-hover-color:      #fff;
+@label-link-hover-color:      @white;
 
 
 //== Modals
@@ -566,7 +595,7 @@
 @modal-title-line-height:     @line-height-base;
 
 //** Background color of modal content area
-@modal-content-bg:                             #fff;
+@modal-content-bg:                             @white;
 //** Modal content border color
 @modal-content-border-color:                   rgba(0,0,0,.2);
 //** Modal content border color **for IE8**
@@ -618,7 +647,7 @@
 //** Background color of the whole progress component
 @progress-bg:                 #f5f5f5;
 //** Progress bar text color
-@progress-bar-color:          #fff;
+@progress-bar-color:          @white;
 
 //** Default progress bar color
 @progress-bar-bg:             @brand-primary;
@@ -637,7 +666,7 @@
 //##
 
 //** Background color on `.list-group-item`
-@list-group-bg:                 #fff;
+@list-group-bg:                 @white;
 //** `.list-group-item` border color
 @list-group-border:             #ddd;
 //** List group border radius
@@ -661,7 +690,7 @@
 //
 //##
 
-@panel-bg:                    #fff;
+@panel-bg:                    @white;
 @panel-body-padding:          15px;
 @panel-border-radius:         @border-radius-base;
 
@@ -673,7 +702,7 @@
 @panel-default-border:        #ddd;
 @panel-default-heading-bg:    #f5f5f5;
 
-@panel-primary-text:          #fff;
+@panel-primary-text:          @white;
 @panel-primary-border:        @brand-primary;
 @panel-primary-heading-bg:    @brand-primary;
 
@@ -725,15 +754,15 @@
 //
 //##
 
-@badge-color:                 #fff;
+@badge-color:                 @white;
 //** Linked badge text color on hover
-@badge-link-hover-color:      #fff;
+@badge-link-hover-color:      @white;
 @badge-bg:                    @gray-light;
 
 //** Badge text color in active nav link
 @badge-active-color:          @link-color;
 //** Badge background color in active nav link
-@badge-active-bg:             #fff;
+@badge-active-bg:             @white;
 
 @badge-font-weight:           bold;
 @badge-line-height:           1;
@@ -762,15 +791,15 @@
 
 @carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6);
 
-@carousel-control-color:                      #fff;
+@carousel-control-color:                      @white;
 @carousel-control-width:                      15%;
 @carousel-control-opacity:                    .5;
 @carousel-control-font-size:                  20px;
 
-@carousel-indicator-active-bg:                #fff;
-@carousel-indicator-border-color:             #fff;
+@carousel-indicator-active-bg:                @white;
+@carousel-indicator-border-color:             @white;
 
-@carousel-caption-color:                      #fff;
+@carousel-caption-color:                      @white;
 
 
 //== Close
@@ -779,7 +808,7 @@
 
 @close-font-weight:           bold;
 @close-color:                 #000;
-@close-text-shadow:           0 1px 0 #fff;
+@close-text-shadow:           0 1px 0 @white;
 
 
 //== Code
@@ -789,7 +818,7 @@
 @code-color:                  #c7254e;
 @code-bg:                     #f9f2f4;
 
-@kbd-color:                   #fff;
+@kbd-color:                   @white;
 @kbd-bg:                      #333;
 
 @pre-bg:                      #f5f5f5;
